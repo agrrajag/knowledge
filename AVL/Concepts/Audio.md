@@ -18,8 +18,6 @@ Can you hear me now?
 {:toc}
 
 ---
-# Audio
-
 ## Wireless Microphone Legal Use
 
 Wireless Microphones in the United States must adhere to FCC regulations for unlicensed devices. The following common frequencies can no longer be used by the posted date
