@@ -18,13 +18,13 @@ Always consult a properly trained stage or electrical engineer.
 {:toc}
 
 ---
-## Note
+# Note
 
 When working with cabling, ensure your circuit is no longer energized, even in low voltage situations. A short has the possibility to injure and/or kill the person working on the circuit.
 
-## Electrical
+# Electrical
 
-### Stage Pin
+## Stage Pin
 
 Ground in middle sticks out further than the rest. Hot is the farthest pin from ground. Neutral is closest to ground.
 
@@ -34,7 +34,7 @@ Ground in middle sticks out further than the rest. Hot is the farthest pin from 
 
 ![](/assets/avl-stagepin.jpg)
 
-### Edison
+## Edison
 
 Also known as NEMA 5-15P \(male\) and 5-15R \(female\). Hot generally has a smaller pin. The colors of the cable and terminals are listed below
 
@@ -44,9 +44,9 @@ Also known as NEMA 5-15P \(male\) and 5-15R \(female\). Hot generally has a smal
 
 ![](/assets/avl-edison.jpg)
 
-## Audio
+# Audio
 
-### XLR - Balanced
+## XLR - Balanced
 
 * Pin 1 – Ground
 * Pin 2 – Hot \(In Phase\)
@@ -54,13 +54,13 @@ Also known as NEMA 5-15P \(male\) and 5-15R \(female\). Hot generally has a smal
 
 ![](/assets/avl-xlr3.jpg)
 
-### Phono Jacks - Unbalanced \(TS, TRS\)
+## Phono Jacks - Unbalanced \(TS, TRS\)
 
 * Tip – Signal/Hot
 * Ring – Cold – Unused in TS
 * Sleeve – Ground/Shield
 
-### Phono Jacks – Unbalanced \(TRRS\)
+## Phono Jacks – Unbalanced \(TRRS\)
 
 > NOTE – If this is for a non-audio application, the wiring is different.
 
