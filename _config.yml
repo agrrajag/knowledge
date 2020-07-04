@@ -82,10 +82,10 @@ color_scheme: nil
 #plugins:
 #  - jekyll-seo-tag
 
-#compress_html:
-#  clippings: all
-#  comments: all
-#  endings: all
-#  startings: []
-#  blanklines: false
-#  profile: false
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
