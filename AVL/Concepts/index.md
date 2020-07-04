@@ -9,6 +9,3 @@ has_children: true
 {: .no_toc }
 
 Everything you wanted to know about the stage and the technology behind it.
-{: .fs-6 .fw-300 }
-
----
