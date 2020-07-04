@@ -7,6 +7,8 @@ has_children: true
 ---
 # Lighting Concepts
 
+{:toc}
+
 ## Vernacular
 
 | DMX | IP/Tech Equivelent |
