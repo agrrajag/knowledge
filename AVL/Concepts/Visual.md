@@ -1,3 +1,4 @@
+---
 layout: default
 title: Visual
 grandparent: Audio, Visual, Lighting
