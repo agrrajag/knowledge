@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Audio, Visual, Lighting
+title: Board Games
 has_children: true
 ---

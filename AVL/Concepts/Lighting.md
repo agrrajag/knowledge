@@ -8,9 +8,6 @@ parent: AVL Concepts
 # Lighting Concepts
 {: .no_toc }
 
-Everything you ever wanted to know about stage lighting...
-{: .fs-6 .fw-300 }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
