@@ -3,7 +3,7 @@ layout: default
 title: Wiring
 grand_parent: Audio, Visual, Lighting
 parent: AVL Concepts
-has_children: true
+
 ---
 # Stage Wiring Concepts
 {: .no_toc }
