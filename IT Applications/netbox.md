@@ -28,7 +28,7 @@ This is an active project with very responsive and friendly contributors.
 
 ### Prerequisites
 
-Before you begin, [create a new virtual machine](../../../../virtualization/vmware/building-a-new-virtual-machine.md#creation) with an [Ubuntu](../../../../linux/ubuntu.md) Linux core. Run apt update and apt upgrade to bring the system up-to-date. While Netbox provides documentation for both Centos and Ubuntu, I will just cover the Ubuntu side.
+Before you begin, [create a new virtual machine](broken-link) with an [Ubuntu](broken-link) Linux core. Run apt update and apt upgrade to bring the system up-to-date. While Netbox provides documentation for both Centos and Ubuntu, I will just cover the Ubuntu side.
 
 You can find the full documentation for this project at: [https://netbox.readthedocs.io/en/stable/installation/](https://netbox.readthedocs.io/en/stable/installation/)
 
