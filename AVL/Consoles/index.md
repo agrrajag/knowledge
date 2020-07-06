@@ -1,9 +1,9 @@
 ---
 layout: default
-title: AVL Concepts
+title: AVL Consoles
 parent: Audio, Visual, Lighting
 has_children: true
 ---
 
-# Audio, Visual, Lighting Concepts
+# Audio, Visual, Lighting Consoles
 {: .no_toc }
