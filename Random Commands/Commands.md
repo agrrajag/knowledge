@@ -16,10 +16,21 @@ Not really sure where else to put these for now...
 {:toc}
 
 ---
+# Git
 
-# Find the Serial Number
+## Clean Up Commits
+``` git
+git checkout --orphan cleanup_branch
+git add -A
+git commit -am "commit message"
+git branch -D master
+git branch -m master
+git push -f origin master
+```
 
-## Windows 
+# Windows 
+
+## Find the Serial Number
 
 ```
 wmic bios get serialnumber
