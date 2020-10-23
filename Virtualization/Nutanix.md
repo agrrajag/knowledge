@@ -156,7 +156,7 @@ This will configure an Async DR Protection Domain - which allows snapshots on th
 * Select OK
 * Wait for the process to complete
 * Check vCenter for updates as well
-* When complete, if the machine is not already powered up, [power up the machine](../vmware/spinning-up-down-virtual-machines.md#to-spin-up) 
+* When complete, if the machine is not already powered up, spin up the machine.
 
 ## File-Level Recovery
 
@@ -257,11 +257,84 @@ Log in to Prism and perform this upgrade sequence:
 * Select Run
 > Don't worry about performing auto inventories. This will cause the cluster to have a REST API error every night it auto-inventories.
 
-## Other Steps
-* Upgrade AOS
-* Run and upgrade LCM
-  * Perform LCM Inventory
-  * Upgrade Firmware
-* Upgrade AHV
-* Upgrade other Hypervisors
-* Run NCC
+## Upgrade AOS
+
+* After running LCM, go to Updates/Software
+* Select the AOS checkbox and make sure it is to the version you would like to move to
+* Select Install
+* Wait for LCM to complete the process
+  * This will take a long time to complete
+
+## Upgrade Firmware
+
+Make sure to complete firmware upgrades BEFORE upgrading AHV. It is common that you will see errors for an incompatible AHV version during this process.
+
+* Run LCM Again
+* After running LCM, go to Updates/Software
+* Select all devices
+* Select Update
+* Select Next
+* Enter in vCenter administrator information
+* Select Next to begin the install
+  * This will take an extended period of time. It will update firmware, BIOS, and other critical resources on each physical host. You can monitor the install progress by connecting to the IPMI of each device.
+
+## Upgrade AHV
+
+* In LCM, go to Updates/Software
+* Select AHV
+* Select Update
+* Select Apply Updates
+
+## Upgrade vCenter
+This must be completed before you upgrade the ESXi Hypervisors in case there are any version issues!
+* Log into the vCenter Web Management GUI
+* Select Update on the left
+* Select Check Updates on the top right
+* Select Check Repository
+* If an update is available, select Install Updates
+* This may require a reboot of vCenter
+  *	Since this is not in a High Availability cluster, this should generally be safe to do during hours. Always approach this cautiously.
+
+
+## Upgrade other Hypervisors
+
+[Nutanix and ESXi Upgrade Information](https://portal.nutanix.com/page/documents/details?targetId=Acropolis-Upgrade-Guide-v5_15:upg-cluster-hypervisor-upgrade-esx-pe-t.html) 
+
+### Prerequisites
+
+* Ensure LCM has upgraded firmware on the machine
+* Ensure the cluster is in good health
+
+### Grab Nutanix Metadata
+
+* Navigate to [Nutanix Hypervisor Details](https://portal.nutanix.com/page/downloads?product=hypervisordetails) and sign in with your Nutanix account.
+* Select the hypervisor, OEM, and the correct version you are looking for
+* Look at the current build number and download the metadata for what you need to move to
+* You will need this file when you complete the upgrade portion.
+
+### Grab the Hypervisor Binary
+
+* Navigate to [my.vmware.com](https://my.vmware.com) and login
+* Select Product Downloads
+* Select View Download Components next to VMWare vSphere (not VMWare vSphere ESXi)
+* Change the version to the correct version
+* Select the Custom ISO’s tab
+* Expand OEM Customized Installer CDs
+* Download the latest OEM Offline Bundle Zip
+
+
+### Upgrade
+
+* Log into Prism
+* Select the gear at the top right of the screen
+* Select Upgrade Software on the left
+* Select the Hypervisor tab
+* Select Upload a Hypervisor binary
+* Upload the Nutanix Metadata file you downloaded
+* Upload the hypervisor zip file to the Binary section
+* Select Upload Now
+* Run the upgrade
+
+### Run NCC
+
+Run NCC a few times after the upgrade. Some warnings and errors will trigger after the devices reboot (NTP errors, Stargate errors, Controller VM Reboot errors). These are ok to monitor. Give it a couple of hours before you report these to your OEM. Check and see if anything is pressing. After about 6 hours, it should stabilize and give you an accurate representation. 
