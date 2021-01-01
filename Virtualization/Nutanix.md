@@ -44,10 +44,7 @@ Health Checks help you see what is going on in the cluster and give you knowledg
 ncc health_checks run_all
 ```
 
-
-# Data Protection, Guest Tools, and Recovery
-
-## Nutanix Guest Tools
+# Nutanix Guest Tools
 
 Nutanix Guest Tools includes a Volume Shadow Service writer to help with application-consistent \(quiesed\) snapshots and self-service restoration.
 
@@ -57,9 +54,9 @@ These allow you to have better backups of Microsoft SQL server and Microsoft Exc
 **Self-Service Restoration**  
 This tool allows you to do [File-Level Restores](#file-level-recovery) from the desktop of the entity you are trying to restore. You do not need to initiate this from Prism.
 
-### Deployment of Nutanix Guest Tools
+## Deployment of Nutanix Guest Tools
 
-#### Windows Server Core
+### Windows Server Core
 
 * Ensure the VM you are about to deploy NGT to has a CD/DVD ROM connected to it and has VMTools installed.
 * Log into Prism
@@ -75,7 +72,7 @@ This tool allows you to do [File-Level Restores](#file-level-recovery) from the 
 * Run setup.exe
 * Follow the prompts on the GUI that will pop up
 
-#### Windows Server with a GUI
+### Windows Server with a GUI
 
 * Ensure the VM you are about to deploy NGT to has a CD/DVD ROM connected to it and has VMTools installed.
 * Log into Prism
@@ -90,7 +87,7 @@ This tool allows you to do [File-Level Restores](#file-level-recovery) from the 
 * Run the installer in the CD Drive
 * Eject the Nutanix Guest Tools when complete
 
-#### Linux
+### Linux
 
 * Ensure the VM you are about to deploy NGT to has a CD/DVD ROM connected to it and has VMTools installed.
 * Log into Prism
@@ -117,11 +114,13 @@ sudo /media/USER/NUTANIX_TOOLS/installer/linux/install_ngt.py
 
 > **NOTE**: There may be some dependencies to install for this process to work. It will tell you in the error if you need to install any missing dependencies
 
-## Configuring Protection Domains
+# Protection Domains
 
-### Adding a new Protection Domain
+There are two types of protection domains: Async DR and Metro Availability. Async DR allows you to take scheduled snapshots of the VM's. Metro Availability allows you to have a storage container replicated in two locations, and automate a failover from one location to the other.
 
-This will configure an Async DR Protection Domain - which allows snapshots on the same storage cluster. Metro Availability is when you run snapshots on a similar remote cluster with a storage container of the same name. With Async DR's you can group machines together by snapshot schedule.
+## Async DR Protection Domains
+
+### Configuring
 
 * Log in to Nutanix Prism
 * On the top left, select the menu dropdown and go to the Data Protection menu
@@ -142,7 +141,7 @@ This will configure an Async DR Protection Domain - which allows snapshots on th
 
 > **NOTE**: For application consistent \(quiesced\) snapshots, that setting must be enabled on **BOTH** the entity and schedule for it to perform that action.
 
-## System-Level Recovery
+### System-Level Recovery
 
 * Log in to Nutanix Prism
 * On the top left, select the menu dropdown and go to the **Data Protection** menu
@@ -158,9 +157,9 @@ This will configure an Async DR Protection Domain - which allows snapshots on th
 * Check vCenter for updates as well
 * When complete, if the machine is not already powered up, spin up the machine.
 
-## File-Level Recovery
+### File-Level Recovery
 
-### Windows with a GUI
+#### Windows with a GUI
 
 It is likely that the Nutanix SSR Application will not work on the Desktop. Use the index file in the program folder to access SSR.
 
@@ -171,7 +170,7 @@ It is likely that the Nutanix SSR Application will not work on the Desktop. Use 
 * Select the down arrow on the right
 * Select Mount
 
-### Windows Server Core
+#### Windows Server Core
 
 * Remote into the server
 * Navigate to c:\Program Files\Nutanix\ngtcli on the command prompt
